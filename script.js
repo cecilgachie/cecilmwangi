@@ -48,7 +48,7 @@ ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact 
 ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
-
+// Typed.js for typing effect
 const typed = new Typed('.multiple-text', {
     strings: ['Photographer', 'Frontend Developer', 'Backend Developer'],
     typeSpeed: 100,
@@ -56,3 +56,37 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 });
+
+// Project section
+const projects = [
+    {
+      title: "Banking App",
+      description: "A secure online banking system with account linking, authentication, and transactions.",
+      tech: "Django, React, PostgreSQL",
+      github: "https://github.com/cecilgachie/banking-app",
+      live: ""
+    },
+    {
+      title: "Portfolio Website",
+      description: "My personal portfolio made using HTML, CSS, and JS, deployed on Netlify.",
+      tech: "HTML, CSS, JS",
+      github: "https://github.com/cecilgachie/cecilmwangi",
+      live: "https://jolly-marshmallow-a26f6d.netlify.app/"
+    }
+  ];
+  
+  const projectList = document.getElementById("projectList");
+  
+  projects.forEach((project) => {
+    const div = document.createElement("div");
+    div.className = "project-card";
+    div.innerHTML = `
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+      <p><strong>Tech Stack:</strong> ${project.tech}</p>
+      <a href="${project.github}" target="_blank">GitHub</a>
+      ${project.live ? `<a href="${project.live}" target="_blank">Live Demo</a>` : ""}
+    `;
+    projectList.appendChild(div);
+  });
+  
