@@ -185,18 +185,19 @@
       
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full name" required>
-                <input type="text" placeholder="Email Address" required>
+        <form id="contact-form">
+         <div class="input-box">
+                <input type="text" name="from_name" placeholder="Full name" required>
+                <input type="email" name="reply_to" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="text" placeholder="Email Subject" required>
-                <input type="number" placeholder="Phone Number" required>
+                <input type="text" name="subject" placeholder="Email Subject" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
+
     </section>
 
     <footer class="footer">
@@ -214,6 +215,14 @@
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
     <script src="script.js"></script>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("iYh-6ZS115qxSZ07R"); // Replace with your actual EmailJS user ID
+  })();
+</script>
+
 
     
 </body>
