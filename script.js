@@ -90,3 +90,14 @@ const projects = [
     projectList.appendChild(div);
   });
   
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_16rkznh', 'template_iir4zbo', this)
+    .then(() => {
+      alert('Message sent successfully!');
+      this.reset();
+    }, (error) => {
+      alert('Failed to send message. Error: ' + JSON.stringify(error));
+    });
+});
